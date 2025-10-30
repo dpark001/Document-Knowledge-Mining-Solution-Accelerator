@@ -844,13 +844,13 @@ module managedCluster 'br/public:avm/res/container-service/managed-cluster:0.10.
           2
           3
         ]
-        vmSize: 'Standard_D4ds_v5'
-        count: 2
+        vmSize: 'Standard_A4_v2'
+        count: 1
         osType: 'Linux'
         mode: 'System'
         type: 'VirtualMachineScaleSets'
         minCount: 1
-        maxCount: 2  // Reduced max count to match the single node configuration
+        maxCount: 2
 
         // WAF aligned configuration for Private Networking
         enableAutoScaling: true
