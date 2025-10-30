@@ -844,13 +844,13 @@ module managedCluster 'br/public:avm/res/container-service/managed-cluster:0.10.
           2
           3
         ]
-        vmSize: 'Standard_D2ds_v5'
-        count: 1
+        vmSize: 'Standard_D4ds_v5'
+        count: 2
         osType: 'Linux'
         mode: 'System'
         type: 'VirtualMachineScaleSets'
         minCount: 1
-        maxCount: 1  // Reduced max count to match the single node configuration
+        maxCount: 2  // Reduced max count to match the single node configuration
 
         // WAF aligned configuration for Private Networking
         enableAutoScaling: true
@@ -965,7 +965,7 @@ output AZURE_SEARCH_SERVICE_NAME string = avmSearchSearchServices.outputs.name
 output AZURE_AKS_NAME string = managedCluster.outputs.name
 
 @description('Contains Azure AKS Managed Identity ID.')
-output AZURE_AKS_MI_ID string = managedCluster.outputs.systemAssignedMIPrincipalId ?? ''
+output AZURE_AKS_MI_ID string = managedCluster.outputs.systemAssignedMIPrincipalId
 
 @description('Contains Azure Container Registry Name.')
 output AZURE_CONTAINER_REGISTRY_NAME string = avmContainerRegistry.outputs.name
